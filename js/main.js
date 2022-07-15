@@ -3,6 +3,12 @@ const fiveValidRandomNumbers = [];
 const nMin = 1;
 const nMax = 100;
 
+// ottenere 5 numeri univoci e stamparli in pagina
+const numberShownToUser = getRandomUniqueNumber(fiveValidRandomNumbers, nMin, nMax);
+document.getElementById('bottom_content').innerHTML = fiveValidRandomNumbers;
+
+// --- inizio funzioni
+
 // funzione che genera numeri casuali
 function getRandomNumber(nMinFunc, nMaxFunc) {
     const randomNumber = Math.floor(Math.random() * (nMaxFunc - nMinFunc + 1) + nMinFunc)
@@ -27,8 +33,3 @@ function getRandomUniqueNumber(arrayF, minF, maxF) {
     // console.log(fiveValidRandomNumbers);
     return arrayF;
 }
-
-/*
-const prova = getRandomUniqueNumber(fiveValidRandomNumbers, nMin, nMax);
-console.log(prova + 'prova funzione');
-*/
