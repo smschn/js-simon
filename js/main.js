@@ -3,9 +3,16 @@ const fiveValidRandomNumbers = [];
 const nMin = 1;
 const nMax = 100;
 
-// ottenere 5 numeri univoci e stamparli in pagina
-const numberShownToUser = getRandomUniqueNumber(fiveValidRandomNumbers, nMin, nMax);
+// ottenere 5 numeri univoci e stamparli in pagina al caricamento della stessa
+getRandomUniqueNumber(fiveValidRandomNumbers, nMin, nMax);
 document.getElementById('bottom_content').innerHTML = fiveValidRandomNumbers;
+
+// dopo 10 secondi i numeri scompaiono
+setTimeout(function() {
+
+    document.getElementById('bottom_content').innerHTML = '';
+
+}, 10000);
 
 // --- inizio funzioni
 
