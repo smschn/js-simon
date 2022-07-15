@@ -2,4 +2,30 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 1.2rem;
+}
+
+main {
+    height: 100vh;
+    width: 100%;
+    background-color: lightgray;
+    position: relative;
+}
+
+#container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#container div {
+    border: 2px solid black;
+    margin: 20px;
+    padding: 20px;
+}
+
+#bottom_content {
+    text-align: center;
 }
