@@ -19,41 +19,38 @@ setTimeout(function() {
 // dopo 7 secondi appaiono 5 prompt >> pusho l'input nell'array >> confronto i due array con un ciclo
 setTimeout(function() {
 
-    let num1 = prompt('Inserisci il primo numero');
+    let num1 = parseInt(prompt('Inserisci il primo numero')); // parseInt perché altrimenti num1 è stringa e non funziona il ciclo di confronto degli array
     fiveUserAnswers.push(num1);
-    let num2 = prompt('Inserisci il secondo numero');
+    let num2 = parseInt(prompt('Inserisci il secondo numero'));
     fiveUserAnswers.push(num2);
-    let num3 = prompt('Inserisci il terzo numero');
+    let num3 = parseInt(prompt('Inserisci il terzo numero'));
     fiveUserAnswers.push(num3);
-    let num4 = prompt('Inserisci il quarto numero');
+    let num4 = parseInt(prompt('Inserisci il quarto numero'));
     fiveUserAnswers.push(num4);
-    let num5 = prompt('Inserisci il quinto numero');
+    let num5 = parseInt(prompt('Inserisci il quinto numero'));
     fiveUserAnswers.push(num5);
 
-    console.log(fiveValidRandomNumbers[0]);
-    console.log(fiveUserAnswers[0]);
-
     for (let i = 0; i < 5; i++) {
+
         if ((fiveValidRandomNumbers.includes(fiveUserAnswers[i])) == true) {
             console.log(`Complimenti! Hai indovinato il numero: ${fiveUserAnswers[i]}`);
             counter++;
         } else {
-            console.log(`Mi dispiace, non hai indovinato il numero ${i}`);
+            console.log(`Mi dispiace, il numero ${fiveUserAnswers[i]} non era tra quelli apparsi.`);
         }
+        
     }
 
-    console.log(`In totale hai indovinato: ${counter} numeri`)
+    console.log(`In totale hai indovinato: ${counter} numeri.`);
 
 }, 7000);
-
-console.log(fiveUserAnswers)
 
 // --- inizio funzioni
 
 // funzione che genera numeri casuali
 function getRandomNumber(nMinFunc, nMaxFunc) {
 
-    const randomNumber = Math.floor(Math.random() * (nMaxFunc - nMinFunc + 1) + nMinFunc)
+    const randomNumber = Math.floor(Math.random() * (nMaxFunc - nMinFunc + 1) + nMinFunc);
     return randomNumber;
 
 }
