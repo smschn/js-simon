@@ -12,7 +12,7 @@ document.getElementById('bottom_content').innerHTML = fiveValidRandomNumbers;
 // dopo 5 secondi i numeri scompaiono
 setTimeout(function() {
 
-    document.getElementById('bottom_content').innerHTML = '';
+    document.getElementById('bottom_content').classList.add('d_none');
 
 }, 5000);
 
@@ -35,8 +35,14 @@ setTimeout(function() {
         if ((fiveValidRandomNumbers.includes(fiveUserAnswers[i])) == true) {
             console.log(`Complimenti! Hai indovinato il numero: ${fiveUserAnswers[i]}`);
             counter++;
+            document.getElementById('correct_numbers').classList.remove('d_none');
+            document.getElementById('correct_numbers').classList.remove('d_block');
+            document.getElementById('correct_numbers').innerHTML += `${fiveUserAnswers[i]}, `;
         } else {
             console.log(`Mi dispiace, il numero ${fiveUserAnswers[i]} non era tra quelli apparsi.`);
+            document.getElementById('wrong_numbers').classList.remove('d_none');
+            document.getElementById('wrong_numbers').classList.remove('d_block');
+            document.getElementById('wrong_numbers').innerHTML += `${fiveUserAnswers[i]}, `;
         }
         
     }

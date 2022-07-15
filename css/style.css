@@ -24,8 +24,17 @@ main {
     border: 2px solid black;
     margin: 20px;
     padding: 20px;
+    border-radius: 30px;
 }
 
 #bottom_content {
     text-align: center;
+}
+
+.d_none {
+    display: none;
+}
+
+.d_block {
+    display: block;
 }
