@@ -3,6 +3,7 @@ const fiveValidRandomNumbers = [];
 const nMin = 1;
 const nMax = 100;
 const fiveUserAnswers = [];
+let counter = 0;
 
 // ottenere 5 numeri univoci e stamparli in pagina al caricamento della stessa
 getRandomUniqueNumber(fiveValidRandomNumbers, nMin, nMax);
@@ -15,21 +16,33 @@ setTimeout(function() {
 
 }, 5000);
 
-// dopo 7 secondi appaiono 5 prompt
+// dopo 7 secondi appaiono 5 prompt >> pusho l'input nell'array >> confronto i due array con un ciclo
 setTimeout(function() {
 
     let num1 = prompt('Inserisci il primo numero');
     fiveUserAnswers.push(num1);
     let num2 = prompt('Inserisci il secondo numero');
     fiveUserAnswers.push(num2);
-    let num3 = prompt('Inserisci il primo numero');
+    let num3 = prompt('Inserisci il terzo numero');
     fiveUserAnswers.push(num3);
-    let num4 = prompt('Inserisci il primo numero');
+    let num4 = prompt('Inserisci il quarto numero');
     fiveUserAnswers.push(num4);
-    let num5 = prompt('Inserisci il primo numero');
+    let num5 = prompt('Inserisci il quinto numero');
     fiveUserAnswers.push(num5);
 
-    console.log(fiveUserAnswers + 'post')
+    console.log(fiveValidRandomNumbers[0]);
+    console.log(fiveUserAnswers[0]);
+
+    for (let i = 0; i < 5; i++) {
+        if ((fiveValidRandomNumbers.includes(fiveUserAnswers[i])) == true) {
+            console.log(`Complimenti! Hai indovinato il numero: ${fiveUserAnswers[i]}`);
+            counter++;
+        } else {
+            console.log(`Mi dispiace, non hai indovinato il numero ${i}`);
+        }
+    }
+
+    console.log(`In totale hai indovinato: ${counter} numeri`)
 
 }, 7000);
 
