@@ -36,12 +36,12 @@ setTimeout(function() {
             console.log(`Complimenti! Hai indovinato il numero: ${fiveUserAnswers[i]}`);
             counter++;
             document.getElementById('correct_numbers').classList.remove('d_none');
-            document.getElementById('correct_numbers').classList.remove('d_block');
+            document.getElementById('correct_numbers').classList.add('d_block');
             document.getElementById('correct_numbers').innerHTML += `${fiveUserAnswers[i]}, `;
         } else {
             console.log(`Mi dispiace, il numero ${fiveUserAnswers[i]} non era tra quelli apparsi.`);
             document.getElementById('wrong_numbers').classList.remove('d_none');
-            document.getElementById('wrong_numbers').classList.remove('d_block');
+            document.getElementById('wrong_numbers').classList.add('d_block');
             document.getElementById('wrong_numbers').innerHTML += `${fiveUserAnswers[i]}, `;
         }
         
