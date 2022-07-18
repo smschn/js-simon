@@ -9,10 +9,11 @@ let counter = 0;
 getRandomUniqueNumber(fiveValidRandomNumbers, nMin, nMax);
 document.getElementById('bottom_content').innerHTML = fiveValidRandomNumbers;
 
-// dopo 5 secondi i numeri scompaiono
+// dopo 5 secondi i numeri scompaiono e cambio il messaggio visualizzato
 setTimeout(function() {
 
     document.getElementById('bottom_content').classList.add('d_none');
+    document.getElementById('top_content').innerHTML = 'Inserisci 5 numeri appena osservati.';
 
 }, 5000);
 
