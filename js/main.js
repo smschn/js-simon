@@ -36,17 +36,19 @@ setTimeout(function() {
         if ((fiveValidRandomNumbers.includes(fiveUserAnswers[i])) == true) {
             console.log(`Complimenti! Hai indovinato il numero: ${fiveUserAnswers[i]}`);
             counter++;
-            document.getElementById('correct_numbers').classList.remove('d_none');
-            document.getElementById('correct_numbers').classList.add('d_block');
             document.getElementById('correct_numbers').innerHTML += `${fiveUserAnswers[i]}, `;
         } else {
             console.log(`Mi dispiace, il numero ${fiveUserAnswers[i]} non era tra quelli apparsi.`);
-            document.getElementById('wrong_numbers').classList.remove('d_none');
-            document.getElementById('wrong_numbers').classList.add('d_block');
             document.getElementById('wrong_numbers').innerHTML += `${fiveUserAnswers[i]}, `;
         }
         
     }
+
+    // faccio apparire i due <div> contenenti i risultati
+    document.getElementById('correct_numbers').classList.remove('d_none');
+    document.getElementById('correct_numbers').classList.add('d_block');
+    document.getElementById('wrong_numbers').classList.remove('d_none');
+    document.getElementById('wrong_numbers').classList.add('d_block');
 
     console.log(`In totale hai indovinato: ${counter} numeri.`);
 
